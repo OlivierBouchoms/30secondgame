@@ -18,14 +18,7 @@ namespace thirtysecondgame
         {
             InitializeComponent();
             CenterToScreen();
-            Testing();
             tbList = new List<TextBox>();
-        }
-
-        private void Testing()
-        {
-            txt1.Text = "Team 1";
-            txt2.Text = "Team 2";
         }
 
         private void buttonPlay_Click(object sender, EventArgs e)
@@ -39,8 +32,9 @@ namespace thirtysecondgame
                     Game.CreatePlayer(c.Text);
                 }
             }
-            this.Hide();
+            Hide();
             //dialoogje laten zien
+
             ConfirmForm confirmForm = new ConfirmForm(game, "Klaar?", "Start!");
             confirmForm.ShowDialog();
             //ronde starten
@@ -52,6 +46,8 @@ namespace thirtysecondgame
         {
             i++;
             if (i > 6) { i--; return; }
+            //Textbox toevoegen
+
             Point point = new Point(txt2.Left, txt2.Top + 30 * i);
             TextBox textBox = new TextBox
             {
@@ -66,14 +62,9 @@ namespace thirtysecondgame
         private void buttonDeletePlayer_Click(object sender, EventArgs e)
         {
             if (i > 0) { i--; }
-            try { this.Controls.Remove(tbList.Last()); }
+            try { Controls.Remove(tbList.Last()); }
             catch (Exception) { return; }
             tbList.Remove(tbList.Last());
-        }
-
-        private void Exit(object sender, FormClosingEventArgs e)
-        {
-
         }
     }
 }
