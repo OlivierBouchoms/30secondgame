@@ -41,14 +41,14 @@ namespace thirtysecondgame
         {
             round = new Round(game);
             Player = round.Player;
-            this.Text = round.Player.Name.ToString() + " is aan de beurt!";
+            this.Text = round.Player.Name + " is aan de beurt!";
             //ronde moet speler hebben
             labelCurrentplayer.Text = Player.Name;
             labelScore.Text = "Score: " + Player.Score.ToString();
             //woorden vullen
             FillWords();
             Player.IncreaseTurns();
-            this.BringToFront();
+            BringToFront();
         }
 
         private void buttonNextRound_Click(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace thirtysecondgame
         {
             int index = r.Next(words.Length);
             string word = words[index];
-            foreach (Control control in this.Controls) //elk label nagaan
+            foreach (Control control in Controls) //elk label nagaan
             {
                 if (control is Label)
                 {
@@ -130,11 +130,6 @@ namespace thirtysecondgame
                 ticks = 0;
                 buttonNextRound_Click(sender, e);
             }
-        }
-
-        private void Exit(object sender, FormClosingEventArgs e)
-        {
-
         }
     }
 }
