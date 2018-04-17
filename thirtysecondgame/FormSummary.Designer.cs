@@ -1,11 +1,14 @@
-﻿namespace thirtysecondgame
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace thirtysecondgame
 {
     partial class FormSummary
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -86,8 +89,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelTitle;
-        private System.Windows.Forms.Button buttonExit;
-        private System.Windows.Forms.Button buttonAgain;
+        private Label labelTitle;
+        private Button buttonExit;
+        private Button buttonAgain;
     }
 }

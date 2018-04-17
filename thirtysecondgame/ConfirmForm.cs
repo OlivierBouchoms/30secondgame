@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -28,7 +27,7 @@ namespace thirtysecondgame
         private void UIDesign(int i)
         {
             CenterToScreen();
-            if (_game.PlayerList.Count <= 3) {buttonStart.Top = (this.ClientSize.Height - buttonStart.Height) / 2; } 
+            if (_game.PlayerList.Count <= 3) {buttonStart.Top = (ClientSize.Height - buttonStart.Height) / 2; } 
             else
             {
                 if (i == 9) { buttonStart.Top = labelTitle.Top + (71 * i) - 37; buttonStart.Height = (int)Convert.ToDouble(buttonStart.Height * 0.5); } //nodig om knop passend te maken
@@ -51,7 +50,7 @@ namespace thirtysecondgame
             if (ticks >= 5)
             {
                 timer.Stop();
-                this.Close();
+                Close();
             }
         }
 
@@ -81,7 +80,7 @@ namespace thirtysecondgame
             UIDesign:
             i++;
             UIDesign(i);
-            this.BringToFront();
+            BringToFront();
             
         }
     }

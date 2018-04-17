@@ -11,7 +11,7 @@
         public Round(Game game)
         {
             //bepaal de huidige speler
-            this.Player = game.PlayerList[currentplayer];
+            Player = game.PlayerList[currentplayer];
             if (currentplayer == game.PlayerList.Count - 1)
             { 
                 currentplayer = 0;

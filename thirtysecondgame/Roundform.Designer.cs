@@ -1,11 +1,14 @@
-﻿namespace thirtysecondgame
+﻿using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace thirtysecondgame
 {
     partial class Roundform
     {
         /// <summary>
         /// Required designer variable.
         /// </summary>
-        private System.ComponentModel.IContainer components = null;
+        private IContainer components = null;
 
         /// <summary>
         /// Clean up any resources being used.
@@ -182,15 +185,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label labelWord1;
-        private System.Windows.Forms.Label labelWord2;
-        private System.Windows.Forms.Label labelWord3;
-        private System.Windows.Forms.Label labelWord4;
-        private System.Windows.Forms.Label labelWord5;
-        private System.Windows.Forms.Label labelCurrentplayer;
-        private System.Windows.Forms.Label labelScore;
-        private System.Windows.Forms.Button buttonNextRound;
-        private System.Windows.Forms.Timer timer;
-        private System.Windows.Forms.Label labelTime;
+        private Label labelWord1;
+        private Label labelWord2;
+        private Label labelWord3;
+        private Label labelWord4;
+        private Label labelWord5;
+        private Label labelCurrentplayer;
+        private Label labelScore;
+        private Button buttonNextRound;
+        private Timer timer;
+        private Label labelTime;
     }
 }

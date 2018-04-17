@@ -37,7 +37,7 @@ namespace thirtysecondgame
                 players += player.ToString();
                 players += ", ";
             }
-            return "Maxscore: " + Maxscore.ToString() + " Players: " + players;
+            return "Maxscore: " + Maxscore + " Players: " + players;
         }
     }
 }

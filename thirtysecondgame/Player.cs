@@ -13,9 +13,9 @@
 
         public Player(string name) //constructor
         {
-            this.Name = name;
-            this.Score = 0;
-            this.Turns = 0;
+            Name = name;
+            Score = 0;
+            Turns = 0;
         }
 
         //properties
@@ -24,30 +24,30 @@
 
         public void IncreaseScore()
         {
-            this.Score += 1;
+            Score += 1;
         }
 
         public void DecreaseScore()
         {
-            if (this.Score > 0)
+            if (Score > 0)
             {
-                this.Score -= 1;
+                Score -= 1;
             }
         }
 
         public void ResetScore()
         {
-            this.Score = 0;
+            Score = 0;
         }
 
         public void IncreaseTurns()
         {
-            this.Turns++;
+            Turns++;
         }
 
         public void ResetTurns()
         {
-            this.Turns = 0;
+            Turns = 0;
         }
 
         public override string ToString()
@@ -57,7 +57,7 @@
 
         public string ToStringOverview()
         {
-            return Name + " - " + Score.ToString();
+            return Name + " - " + Score;
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
@@ -14,7 +13,7 @@ namespace thirtysecondgame
         {
             InitializeComponent();
             this.game = game;
-            this.Text = Playername + " heeft gewonnen!";
+            Text = Playername + " heeft gewonnen!";
         }
 
         private void FormSummary_Load(object sender, EventArgs e)
@@ -37,7 +36,7 @@ namespace thirtysecondgame
                 };
                 Controls.Add(label);
             }
-            this.BringToFront();
+            BringToFront();
         }
 
         private void Restart(object sender, EventArgs e)
@@ -50,7 +49,7 @@ namespace thirtysecondgame
             }
             //nieuwe game
             Game g = new Game(game.Maxscore);
-            this.Hide();
+            Hide();
             //dialoogje laten zien
             ConfirmForm confirmForm = new ConfirmForm(g);
             confirmForm.ShowDialog();

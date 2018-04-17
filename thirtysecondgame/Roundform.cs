@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.IO;
+using System.Windows.Forms;
 
 namespace thirtysecondgame
 {
@@ -34,17 +28,17 @@ namespace thirtysecondgame
         private void UIDesign()
         {
             CenterToScreen();
-            labelTime.Left = (this.ClientSize.Width - labelTime.Width) / 2;
+            labelTime.Left = (ClientSize.Width - labelTime.Width) / 2;
         }
 
         private void Roundform_Load(object sender, EventArgs e)
         {
             round = new Round(game);
             Player = round.Player;
-            this.Text = round.Player.Name + " is aan de beurt!";
+            Text = round.Player.Name + " is aan de beurt!";
             //ronde moet speler hebben
             labelCurrentplayer.Text = Player.Name;
-            labelScore.Text = "Score: " + Player.Score.ToString();
+            labelScore.Text = "Score: " + Player.Score;
             //woorden vullen
             FillWords();
             Player.IncreaseTurns();
@@ -58,13 +52,13 @@ namespace thirtysecondgame
             {
                 MessageBox.Show(player.Name + " heeft gewonnen.");
                 FormSummary formSummary = new FormSummary(game, player.Name);
-                this.Close();
+                Close();
                 formSummary.Show();
             }
             //als game niet over is
             else
             {
-                this.Hide();
+                Hide();
                 ConfirmForm confirmForm = new ConfirmForm(game);
                 confirmForm.ShowDialog();
                 Roundform round = new Roundform(Game);
@@ -78,14 +72,13 @@ namespace thirtysecondgame
             {
                 (sender as Label).ForeColor = Color.Green;
                 Player.IncreaseScore();
-                labelScore.Text = "Score: " + Player.Score.ToString();
-                return;
+                labelScore.Text = "Score: " + Player.Score;
             }
             else
             {
                 (sender as Label).ForeColor = Color.Black;
                 Player.DecreaseScore();
-                labelScore.Text = "Score: " + Player.Score.ToString();
+                labelScore.Text = "Score: " + Player.Score;
             }
         }
 
@@ -123,7 +116,7 @@ namespace thirtysecondgame
         {
             ticks++;
             labelTime.Text = (30 - ticks).ToString();
-            labelTime.Left = (this.ClientSize.Width - labelTime.Width) / 2; //update locatie
+            labelTime.Left = (ClientSize.Width - labelTime.Width) / 2; //update locatie
             if (ticks >= 30)
             {
                 timer.Stop();
